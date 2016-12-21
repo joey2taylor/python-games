@@ -29,9 +29,9 @@ pygame.init()
 s=pygame.display.set_mode((600, 600))
 pygame.display.set_caption('Snake')
 appleimage = pygame.Surface((10, 10))
-appleimage.fill((255, 0, 0))
+appleimage.fill((255, 100, 255))
 img = pygame.Surface((20, 20))
-img.fill((255, 255, 0))
+img.fill((0, 255, 255))
 f = pygame.font.SysFont('Arial', 20)
 clock = pygame.time.Clock()
 
@@ -72,12 +72,12 @@ while True:
     elif dirs==1:xs[0] += 20
     elif dirs==2:ys[0] -= 20
     elif dirs==3:xs[0] -= 20    
-    s.fill((0, 0, 255))    
+    s.fill((255, 0, 255))    
     for i in range(0, len(xs)):
         s.blit(img, (xs[i], ys[i]))
     s.blit(appleimage, applepos);
     t=f.render(str(score), True, (0, 0, 0))
-    s.blit(t, (10, 10))
+    s.blit(t,(300, 10))
     pygame.display.update()
 
 
